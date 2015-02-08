@@ -1,6 +1,6 @@
 set updatetime=500
 let g:testPath = expand('<sfile>:p:h')
-let g:scriptPath = fnamemodify('vimPy.sh',expand('<sfile>:p:h'))
+let g:scriptPath = expand('<sfile>:p:h').'/vimPy.sh'
 function! RunPython(winWidth)
 	execute 'w'
 	let filePath = expand('%:p')
