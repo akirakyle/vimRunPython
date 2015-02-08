@@ -2,6 +2,7 @@ set updatetime=500
 function! RunPython(winWidth)
 	execute 'w'
 	let filePath = expand('%:p')
+    echo filePath
 	if !bufexists('python')
 		execute a:winWidth.'vnew'
 		execute 'silent file python'
