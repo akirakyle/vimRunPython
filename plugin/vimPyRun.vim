@@ -16,7 +16,7 @@ function! RunPython(winWidth)
     "be aware that this uses gstdbuf wich is part of the gnu coreutils and is not standard on macs
     execute 'silent !'.g:scriptPath.' "'.filePath.'" &'
     execute 'redraw!'
-    echo g:scriptPath.' '.filePath.' &'
+    echo g:scriptPath.' "'.filePath.'" &'
     autocmd CursorHold,CursorHoldI * call UpdatePython()
 endfunction
 
