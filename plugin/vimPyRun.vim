@@ -1,9 +1,9 @@
 set updatetime=500
 let g:testPath = expand('<sfile>:p:h')
+let g:scriptPath = fnamemodify('vimPy.sh','<sfile>:p:h')
 function! RunPython(winWidth)
 	execute 'w'
 	let filePath = expand('%:p')
-    let scriptPath = fnamemodify('vimPy.sh','<sfile>:p:h')
 	if !bufexists('python')
 		execute a:winWidth.'vnew'
 		execute 'silent file python'
@@ -17,7 +17,7 @@ function! RunPython(winWidth)
     "be aware that this uses gstdbuf wich is part of the gnu coreutils and is not standard on macs
     execute 'silent !~/vimPy.sh '.filePath.' &'
     execute 'redraw!'
-    echo g:testPath
+    echo g:scriptPath
     autocmd CursorHold,CursorHoldI * call UpdatePython()
 endfunction
 
